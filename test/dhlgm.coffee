@@ -44,8 +44,8 @@ describe "DHL Global Mail client", ->
 
       it "has 5 activities with timestamp, location and details", ->
         expect(_package.activities).to.have.length 5
-        verifyActivity(_package.activities[0], 'Mar 27 2014 10:00 am', 'Brisbane, AU', 'Cleared Customs')
-        verifyActivity(_package.activities[4], 'Mar 19 2014 11:07 pm', 'Des Plaines, IL, US', 'Arrival DHL Global Mail Facility')
+        verifyActivity(_package.activities[0], '2014-03-27T15:00Z', 'Brisbane, AU', 'Cleared Customs')
+        verifyActivity(_package.activities[4], '2014-03-20T04:07Z', 'Des Plaines, IL, US', 'Arrival DHL Global Mail Facility')
 
 
     describe "delivered package", ->
