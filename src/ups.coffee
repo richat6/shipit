@@ -30,7 +30,8 @@ class UpsClient extends ShipperClient
 
   validateResponse: (response, cb) ->
     handleResponse = (xmlErr, trackResult) ->
-      return cb(xmlErr) if xmlErr? or !trackResult?
+      return cb(xmlErr) if xmlErr?
+      return cb("no track results") if !trackResult?
       responseStatus = trackResult['TrackResponse']?['Response']?[0]?['ResponseStatusDescription']?[0]
       if responseStatus isnt 'Success'
         error = trackResult['TrackResponse']?['Response']?[0]?['Error']?[0]?['ErrorDescription']?[0]
