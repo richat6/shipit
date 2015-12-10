@@ -1,0 +1,14 @@
+<p>This is the partial for view 1.</p>
+<div>
+    <button type="button" ng-click="getListsOnBoard()" class="btn" id="createCard">Create Cards</button>
+</div>
+<div class="alert alert-error" ng-show="isShowError" ng-click="closeErrorMessage()">
+    {{ errorMessage }}
+</div>
+<h3>Lists</h3>
+
+<div class="list-group" ng-repeat="l in listIds">
+    <p>
+        [{{l.name}}] - [{{l.id}}]
+    </p>
+</div>
