@@ -20,6 +20,7 @@
   "devDependencies": {
     "bondjs": "~1.0.0",
     "chai": "~1.9.0",
+    "grunt-contrib-concat": "^0.5.1",
     "grunt-mocha-test": "~0.6.3",
     "mocha": "~1.17.1"
   },

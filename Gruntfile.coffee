@@ -3,8 +3,12 @@ module.exports = (grunt) =>
     coffee:
       compile:
         files: [
-          {expand: true, cwd: 'src', src: '*.coffee', dest: 'lib', ext: '.js'}
+          {expand: true, cwd: 'src', src: '*.coffee', dest: 'lib/', ext: '.js'}
         ]
+    concat:
+      dist:
+         src: [ 'lib/*.js' ]
+         dest: 'lib/shipit.js'
     mochaTest:
       options:
         reporter: 'spec'
@@ -12,5 +16,6 @@ module.exports = (grunt) =>
 
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-mocha-test'
+  grunt.loadNpmTasks 'grunt-contrib-concat'
 
   grunt.registerTask 'default', ['coffee', 'mochaTest']
