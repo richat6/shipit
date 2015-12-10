@@ -180,6 +180,12 @@ $ grunt
 Done, without errors.
 ```
 
+Concat all compile js files into lib/shipit.js
+```
+grunt concat
+```
+
+
 ## Adding new shipping carriers
 * Extend the common class `ShipperClient`
 * Implement necessary methods
