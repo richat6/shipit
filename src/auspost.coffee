@@ -5,7 +5,7 @@ moment = require 'moment-timezone'
 
 class AusPostClient extends ShipperClient
 
-  constructor: (@options) ->
+  constructor: ({@username, @password}, @options) ->
     super
 
   validateResponse: (response, cb) ->
@@ -78,6 +78,7 @@ class AusPostClient extends ShipperClient
   requestOptions: ({trackingNumber}) ->
     method: 'GET'
     uri: "https://digitalapi.auspost.com.au/track/v3/search?q=#{trackingNumber}"
+    auth: {user: @username, pass: @password}
 
 
 module.exports = {AusPostClient}

@@ -11,7 +11,9 @@ describe "auspost client", ->
   _auspostClient = null
 
   before ->
-    _auspostClient = new AusPostClient()
+    _auspostClient = new AusPostClient
+      username: 'ozzie ozzie ozzie'
+      password: 'oi oi oi'
 
   describe "requestOptions", ->
     _options = null
