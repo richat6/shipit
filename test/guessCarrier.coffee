@@ -151,3 +151,11 @@ describe 'carrier guesser', ->
 
     it 'detects a 94748... number', ->
       expect(guessCarrier '9474812901015476250258').to.include 'dhlgm'
+
+  describe 'for AusPost', ->
+
+    it 'detects an AP Standard Barcode', ->
+      expect(guessCarrier '12345678ABB12345678901200').to.include 'auspost'
+
+    it 'detects a GS1 Standard Barcode', ->
+      expect(guessCarrier '019931265012345491R418256013766712006120916').to.include 'auspost'
